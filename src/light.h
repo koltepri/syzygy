@@ -1,15 +1,17 @@
-#pragma once
+#ifndef LIGHT_H // DIFF: replaced #pragma once
+#define LIGHT_H
+
+#include "obstacle_c.h"
 #include <raylib.h>
-#include "obstacle.h"
 
-class Light
-{
-public:
-    Light(int posX, int posY);
-    void Draw(const Obstacle* obstacles, int count) const;
+typedef struct {
+  int x;
+  int y;
+  int RayCount;
+} Light;
 
-private:    
-    int x;
-    int y;
-    int RayCount;
-};
+Light Light_Create(int posX, int posY);
+
+void Light_Draw(const Light *light, const Obstacle *obstacles, int count);
+
+#endif

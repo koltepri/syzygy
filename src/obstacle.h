@@ -1,15 +1,19 @@
-#pragma once
+#ifndef OBSTACLE_H
+#define OBSTACLE_H
+
 #include <raylib.h>
 
-enum ObstacleType { KASSI, CIRCLE };
+typedef enum { KASSI, CIRCLE } ObstacleType;
 
-struct Obstacle
+typedef struct
 {
     ObstacleType    type;
     Rectangle       rect;
-    Vector2         center;    //Kúlu miðju hnit
+    Vector2         center;
     float           radius;
     bool            reflective;
     Color           color;
     float           rotation;
-};
+} Obstacle;
+
+#endif

@@ -65,7 +65,7 @@ void Light_Draw(const Light *light, const Obstacle *obstacles,int count) {
         break;
       }
       if (sqrtf((Walking_x - light->x)*(Walking_x - light->x)+
-                (Walking_y - light->y)*(Walking_y - light->y)) > 600) {
+                (Walking_y - light->y)*(Walking_y - light->y)) > 400) {
         DrawLine(StartX, StartY, Walking_x, Walking_y, Fade(YELLOW, 0.3f));
         break;}
 
@@ -127,7 +127,7 @@ void Shadow_Removal (const Light *light, const Obstacle *obstacles, int count) {
         break;
       }
       if (sqrtf((Walking_x - light->x)*(Walking_x - light->x)+
-                (Walking_y - light->y)*(Walking_y - light->y)) > 600) {
+                (Walking_y - light->y)*(Walking_y - light->y)) > 400) {
         DrawLineEx((Vector2){StartX, StartY}, (Vector2){Walking_x, Walking_y}, thickness, WHITE); 
         break;
       }

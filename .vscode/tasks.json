@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "process",
+            "command": "C:/raylib/w64devkit/bin/gcc.exe",
+            "args": [
+                "-o", "${workspaceFolder}/main.exe",
+                "${workspaceFolder}/src/main.c",
+                "${workspaceFolder}/src/light.c",
+                "-I${workspaceFolder}/src",
+                "-IC:/raylib/raylib/src",
+                "-LC:/raylib/raylib/src",
+                "-lraylib", "-lopengl32", "-lgdi32", "-lwinmm",
+                "-Wall", "-std=c99", "-g", "-O0",
+                "-D_DEFAULT_SOURCE", "-DPLATFORM_DESKTOP"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:/raylib/w64devkit/bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build release",
+            "type": "process",
+            "command": "C:/raylib/w64devkit/bin/gcc.exe",
+            "args": [
+                "-o", "${workspaceFolder}/main.exe",
+                "${workspaceFolder}/src/main.c",
+                "${workspaceFolder}/src/light.c",
+                "-I${workspaceFolder}/src",
+                "-IC:/raylib/raylib/src",
+                "-LC:/raylib/raylib/src",
+                "-lraylib", "-lopengl32", "-lgdi32", "-lwinmm",
+                "-Wall", "-std=c99", "-s", "-O1",
+                "-D_DEFAULT_SOURCE", "-DPLATFORM_DESKTOP"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:/raylib/w64devkit/bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

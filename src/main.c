@@ -5,16 +5,16 @@
 
 int main(void) { 
   int screenWidth = 1500; //todo að það autofillist og allt er ratioað út frá því
-  int screenHeight = 1000;
+  int screenHeight = 1100;
   InitWindow(screenWidth, screenHeight, "");
   SetTargetFPS(60);
 
   //Load texture fyrir hluti, breyta í function?
-  Texture2D background = LoadTexture("Images/Background_Board_rough.png");     
+  Texture2D background = LoadTexture("Images/Background_Board_almost_final.png");     
   RenderTexture2D Shadow_Negatative = LoadRenderTexture(screenWidth, screenHeight);  //Shadow_Negative er skugginn sem er síðan skorinn úr af ljósinu, get ekki fundið meira cool og discriptive nafn
   Texture2D Mars = LoadTexture("Images/Mars.png");
 
-  Light light1 = Light_Create(screenWidth/2-210,screenHeight/2); //todo búa til betri leið til að finna miðju á ljósi
+  Light light1 = Light_Create(screenWidth/2,screenHeight/2); //todo búa til betri leið til að finna miðju á ljósi
   Obstacle obstacles[] = {
       {CIRCLE, {0, 0, 0, 0}, {200, 800}, 40, false, GRAY, 0},
       {CIRCLE, {0, 0, 0, 0}, {400, 600}, 60, false, MAROON, 0},
